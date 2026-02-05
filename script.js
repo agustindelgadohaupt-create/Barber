@@ -10,4 +10,19 @@ function reservar() {
   
     window.open(url, "_blank");
   }
+let index = 0;
+
+function mover(direccion) {
+
+  let slides = document.querySelector(".slides");
+  let total = document.querySelectorAll(".slide").length;
+
+  index += direccion;
+
+  if (index < 0) index = total - 1;
+  if (index >= total) index = 0;
+
+  slides.style.transform = `translateX(-${index * 100}%)`;
+}
+
   
